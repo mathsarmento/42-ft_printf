@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:40:30 by msarment          #+#    #+#             */
-/*   Updated: 2023/09/14 14:35:14 by msarment         ###   ########.fr       */
+/*   Updated: 2023/09/14 15:06:06 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,9 @@ int	checkflags(va_list args, char flag)
 	if (flag == '%')
 		cont += ft_putchar('%');
 	return (cont);
+}
+
+int main(void)
+{
+	
 }

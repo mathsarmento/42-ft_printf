@@ -1,0 +1,8 @@
+{
+	"C_Cpp.errorSquiggles": "disabled",
+	"files.associations": {
+		"ft_printf.h": "c",
+		"string_view": "c",
+		"printf.h": "c"
+	}
+}

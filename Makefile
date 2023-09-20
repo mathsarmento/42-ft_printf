@@ -1,40 +1,33 @@
-NAME			= printf.a
+NAME			= libftprintf.a
 
 SRCS			=	\
 					mandatory/ft_chars.c \
 					mandatory/ft_nbrs.c \
 					mandatory/ft_printf.c \
-					libft/libft.a
-
+					mandatory/ft_strlen.c \
+					mandatory/ft_putchar_fd.c
 
 OBJS			= $(SRCS:.c=.o)
 
-INCLUDE_PATH	= ./mandatory
-
 CC				= gcc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror -I include
+MAKEFLAGS 		+= --no-print-directory
 
-all: libft $(OBJS) $(NAME)
+all:			$(NAME)
 
-libft:
-				make -C libft --no-print-directory
+$(NAME):		$(OBJS)
+				@ar rcs $(NAME) $(OBJS)
 
-$(NAME):
-				ar rcs $(NAME) $(OBJS)
-
-clean: cleanlib
-				$(RM) $(OBJS) $(BONUS_OBJS)
+clean:
+				@$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:			clean
-				$(RM) $(NAME)
-
-cleanlib:
-				make clean -C libft
+				@$(RM) $(NAME)
 
 re:				fclean $(NAME)
 
 bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+				@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY:			all clean fclean re bonus

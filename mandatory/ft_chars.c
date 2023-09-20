@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_chars.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msarment <msarment@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 11:17:48 by msarment          #+#    #+#             */
-/*   Updated: 2023/09/14 11:21:42 by msarment         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:57:10 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,14 @@ int	ft_putchar(char c)
 
 int	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (str[i])
 	{
 		ft_putchar_fd(str[i], 1);

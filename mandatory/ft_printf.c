@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msarment <msarment@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:40:30 by msarment          #+#    #+#             */
-/*   Updated: 2023/09/14 15:06:06 by msarment         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:24:44 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_printf(const char *str, ...)
 		}
 		cont++;
 	}
-	return(index);
+	return (index);
 }
 
 int	checkflags(va_list args, char flag)
@@ -54,15 +54,10 @@ int	checkflags(va_list args, char flag)
 	if (flag == 'u')
 		cont += ft_base_putnbr(va_arg(args, unsigned int), DECIMAL_BASE);
 	if (flag == 'x')
-		cont += ft_base_putnbr(va_arg(args, unsigned int), HEXADECIMAL_BASE_LOW);
+		cont += ft_base_putnbr(va_arg(args, unsigned int), HEXA_BASE_LOW);
 	if (flag == 'X')
 		cont += ft_base_putnbr(va_arg(args, unsigned int), HEXADECIMAL_BASE_UP);
 	if (flag == '%')
 		cont += ft_putchar('%');
 	return (cont);
-}
-
-int main(void)
-{
-	
 }

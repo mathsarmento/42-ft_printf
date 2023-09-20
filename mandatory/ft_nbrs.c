@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_nbrs.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msarment <msarment@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 11:28:37 by msarment          #+#    #+#             */
-/*   Updated: 2023/09/14 14:16:22 by msarment         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:24:44 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,15 @@ int	ft_base_putnbr(long int nbr, char *base)
 
 int	ft_putptr(unsigned long ptr)
 {
-	int cont;
+	int	cont;
 
 	cont = 0;
 	if (!ptr)
-		return(ft_putstr("(nil)"));
+		return (ft_putstr("(nil)"));
 	if (ptr >= 16)
 		cont += ft_putptr(ptr / 16);
 	else
 		cont += ft_putstr("0x");
-	cont += ft_putchar(HEXADECIMAL_BASE_LOW[ptr % 16]);
+	cont += ft_putchar(HEXA_BASE_LOW[ptr % 16]);
 	return (cont);
 }

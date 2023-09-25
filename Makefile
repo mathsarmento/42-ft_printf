@@ -9,7 +9,7 @@ SRCS			=	\
 
 OBJS			= $(SRCS:.c=.o)
 
-CC				= gcc
+CC				= @ gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I include
 MAKEFLAGS 		+= --no-print-directory
@@ -17,10 +17,18 @@ MAKEFLAGS 		+= --no-print-directory
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
+				@printf "Copilando arquivos... \n"
+				@sleep 0.5
+				@printf "Transformando em biblioteca... \n"
+				@sleep 0.5
 				@ar rcs $(NAME) $(OBJS)
+				@printf "Done!\n"
 
 clean:
+				@printf "Limpando os arquivos...\n"
 				@$(RM) $(OBJS) $(BONUS_OBJS)
+				@sleep 0.5
+				@printf "Done!\n"
 
 fclean:			clean
 				@$(RM) $(NAME)

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:40:38 by msarment          #+#    #+#             */
-/*   Updated: 2023/09/26 16:42:52 by msarment         ###   ########.fr       */
+/*   Updated: 2023/09/26 19:12:53 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_PRINTF_BONUS_H
+# define FT_PRINTF_BONUS_H
 
 # include <stdarg.h>
 # include <unistd.h>
@@ -22,14 +22,15 @@
 # define INT_MIN -2147483648
 
 int		ft_printf(const char *str, ...);
-int		checkflags(va_list args, char flag);
+int		checkflags(va_list args, char flag, char next);
 int		ft_putchar(char c);
 int		ft_putstr(char *str);
 int		ft_base_putnbr(long int nbr, char *base);
 int		ft_putptr(unsigned long ptr);
 size_t	ft_strlen(const char *s);
 void	ft_putchar_fd(char c, int fd);
-
-
+int		ft_spaceflag(int number);
+int		ft_moreflag(int number);
+int		ft_hashflag(long int nbr, char next);
 
 #endif

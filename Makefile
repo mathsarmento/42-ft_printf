@@ -7,7 +7,17 @@ SRCS			=	\
 					mandatory/ft_strlen.c \
 					mandatory/ft_putchar_fd.c
 
+SRCS_BONUS		=	\
+					bonus/ft_chars_bonus.c \
+					bonus/ft_nbrs_bonus.c \
+					bonus/ft_printf_bonus.c \
+					bonus/ft_strlen_bonus.c \
+					bonus/ft_putchar_fd_bonus.c \
+					bonus/ft_flag_bonus.c
+
 OBJS			= $(SRCS:.c=.o)
+
+OBJS_BONUS		= $(SRCS_BONUS:.c=.o)
 
 CC				= @ gcc
 RM				= rm -f
@@ -24,9 +34,17 @@ $(NAME):		$(OBJS)
 				@ar rcs $(NAME) $(OBJS)
 				@printf "Done!\n"
 
+bonus:			$(OBJS_BONUS)
+				@printf "Copilando arquivos... \n"
+				@sleep 0.5
+				@printf "Transformando em biblioteca... \n"
+				@sleep 0.5
+				@ar rcs $(NAME) $(OBJS_BONUS)
+				@printf "Done!\n"
+
 clean:
 				@printf "Limpando os arquivos...\n"
-				@$(RM) $(OBJS) $(BONUS_OBJS)
+				@$(RM) $(OBJS) $(OBJS_BONUS)
 				@sleep 0.5
 				@printf "Done!\n"
 
@@ -34,8 +52,5 @@ fclean:			clean
 				@$(RM) $(NAME)
 
 re:				fclean $(NAME)
-
-bonus:			$(OBJS) $(BONUS_OBJS)
-				@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY:			all clean fclean re bonus

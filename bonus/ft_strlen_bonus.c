@@ -6,12 +6,11 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 16:49:40 by msarment          #+#    #+#             */
-/*   Updated: 2023/09/26 16:47:59 by msarment         ###   ########.fr       */
+/*   Updated: 2023/09/26 19:20:06 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
-
 
 size_t	ft_strlen(const char *s)
 {

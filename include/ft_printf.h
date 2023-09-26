@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:40:38 by msarment          #+#    #+#             */
-/*   Updated: 2023/09/26 16:42:52 by msarment         ###   ########.fr       */
+/*   Updated: 2023/09/26 19:20:31 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,5 @@ int		ft_base_putnbr(long int nbr, char *base);
 int		ft_putptr(unsigned long ptr);
 size_t	ft_strlen(const char *s);
 void	ft_putchar_fd(char c, int fd);
-
-
 
 #endif

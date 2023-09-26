@@ -6,7 +6,7 @@
 /*   By: msarment <msarment@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 10:40:30 by msarment          #+#    #+#             */
-/*   Updated: 2023/09/26 19:04:57 by msarment         ###   ########.fr       */
+/*   Updated: 2023/09/26 19:54:59 by msarment         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	checkflags(va_list args, char flag, char next)
 	if (flag == '#')
 		cont = ft_hashflag(va_arg(args, unsigned int), next);
 	if (flag == ' ')
-		cont = ft_spaceflag(va_arg(args, int));
+		cont = ft_spaceflag(args, next);
 	if (flag == '+')
 		cont = ft_moreflag(va_arg(args, int));
 	return (cont);
